@@ -1,5 +1,9 @@
 # cel-brief
 
+[![crates.io](https://img.shields.io/crates/v/cel-brief.svg)](https://crates.io/crates/cel-brief)
+[![docs.rs](https://docs.rs/cel-brief/badge.svg)](https://docs.rs/cel-brief)
+[![CI](https://github.com/dimpagk92/cel-brief/actions/workflows/ci.yml/badge.svg)](https://github.com/dimpagk92/cel-brief/actions/workflows/ci.yml)
+
 Composable prompt briefing for AI agents. Gather memory, perception, history,
 tools, and user messages from pluggable sources; enforce token budgets; apply
 governance; and emit receipts.
@@ -75,9 +79,9 @@ assert_eq!(cs.len(), 1);
 See [`examples/standalone.rs`](examples/standalone.rs) for a self-contained hand-fanout and [`examples/with_memory.rs`](examples/with_memory.rs) for the `cel-memory` integration:
 
 ```sh
-cargo run -p cel-brief --example standalone
-cargo run -p cel-brief --features memory --example with_memory
-cargo run -p cel-brief --example governance
+cargo run --example standalone
+cargo run --features memory --example with_memory
+cargo run --example governance
 ```
 
 The `governance` example shows a custom redaction hook and the resulting
@@ -123,10 +127,10 @@ The default `NoOpGovernance` always allows. Production callers can plug in a rea
 
 ## Benchmark
 
-A microbenchmark for hand-assembled briefs lives at [`benches/build.rs`](benches/build.rs). Target: under 50 ms p95 for a realistic brief once the `BriefBuilder` ships. Run with:
+A microbenchmark for hand-assembled briefs lives at [`benches/build.rs`](benches/build.rs). Target: under 50 ms p95 for a realistic brief. Run with:
 
 ```sh
-cargo bench -p cel-brief --features memory
+cargo bench --features memory
 ```
 
 ## License

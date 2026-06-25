@@ -3,6 +3,9 @@ name = "cel-brief"
 version = "0.1.6"
 edition = "2021"
 license = "Apache-2.0"
+authors = ["Dimitrios Pagkratis <dimitris@timberhub.com>"]
+homepage = "https://github.com/dimpagk92/cel-brief"
+documentation = "https://docs.rs/cel-brief"
 repository = "https://github.com/dimpagk92/cel-brief"
 description = "Composable prompt briefing for AI agents: gather sources, enforce token budgets, apply governance, and emit receipts."
 keywords = ["ai", "llm", "agent", "context", "prompt"]
@@ -29,7 +32,7 @@ perception = []
 # turn on when you need ground-truth OpenAI/cl100k-base counts.
 tiktoken = ["dep:tiktoken-rs"]
 # Internal `tracing` instrumentation on the builder hot path. Optional so
-# extraction-prep stays clean for downstream consumers that don't care.
+# downstream consumers that do not use tracing pay no cost.
 tracing = ["dep:tracing"]
 
 [dev-dependencies]

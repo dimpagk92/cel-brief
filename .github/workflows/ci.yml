@@ -12,6 +12,8 @@ jobs:
       - uses: dtolnay/rust-toolchain@stable
       - uses: Swatinem/rust-cache@v2
       - run: cargo fmt --check
+      - run: cargo clippy --all-targets -- -D warnings
+      - run: cargo clippy --all-targets --features "memory perception" -- -D warnings
       - run: cargo test --all-targets
       - run: cargo test --features "memory perception" --all-targets
       - run: cargo package --dry-run
