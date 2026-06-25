@@ -23,7 +23,7 @@ inside the agent loop with string concatenation and homegrown budget code.
 
 ## Three commitments
 
-1. **Everything is a `Source`.** Memory, perception, history, tools — all the same trait. Plug in [`cel-memory`](../cel-memory), Mem0, Letta, or your own — `cel-brief` doesn't care.
+1. **Everything is a `Source`.** Memory, perception, history, tools — all the same trait. Plug in [`cel-memory`](https://crates.io/crates/cel-memory), Mem0, Letta, or your own — `cel-brief` doesn't care.
 2. **Structured output, not a string.** `Brief { messages, tools, system, receipt }` is provider-agnostic; renderers map to OpenAI / Anthropic / local-model wire formats.
 3. **Governance and budget are first-class.** Importance scoring, redaction hooks, token budgets, receipts — built in, not bolted on.
 
@@ -118,7 +118,7 @@ The default `NoOpGovernance` always allows. Production callers can plug in a rea
 
 ## Features
 
-- `memory` — enable `MemorySource<P>` (depends on [`cel-memory`](../cel-memory)).
+- `memory` — enable `MemorySource<P>` (depends on [`cel-memory`](https://crates.io/crates/cel-memory)).
 - `perception` — enable the `PerceptionSnapshot` trait + `PerceptionSource<P>`. Perception backends live downstream: a runtime adapts its own live perception engine into a `PerceptionSnapshot`. This feature adds no dependency on any perception crate.
 
 ## Benchmark
