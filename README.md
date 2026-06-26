@@ -8,7 +8,12 @@ Composable prompt briefing for AI agents. Gather memory, perception, history,
 tools, and user messages from pluggable sources; enforce token budgets; apply
 governance; and emit receipts.
 
-**Status:** Phases 1–4 shipped — core types, the `Source` trait and all built-in sources, the `Governance` trait, and the `BriefBuilder` (tokenizer + priority/budget pruning + `BriefReceipt`). The crate is feature-complete for assembling per-turn briefs.
+**Status:** v0.2.0 on [crates.io](https://crates.io/crates/cel-brief) — Phases 1–4 shipped: core types, the `Source` trait and all built-in sources, the `Governance` trait, and the `BriefBuilder` (tokenizer + priority/budget pruning + `BriefReceipt`).
+
+## Upgrading from 0.1.x
+
+The optional `memory` feature depends on **`cel-memory` 0.2.0**. See the
+**[0.2 migration guide](https://github.com/dimpagk92/cellar/blob/sync/main-from-private-2026-06-10/docs/migration-0.2.md)**.
 
 ## Purpose
 
